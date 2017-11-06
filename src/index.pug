@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Phone Calculator
+    link(rel="stylesheet", href="assets/css/material-icons.css")
+    link(rel="stylesheet", href="styles.css")
+  body
+    .phone#phone-calculator
+      .phone-screen
+        .status-bar
+          span: i.material-icons network_wifi
+          span: i.material-icons network_cell
+          span: i.material-icons battery_full
+          span: small 100%
+          span: b.hour(v-cloack="") {{ time }}
+        .calculator-app
+          .splash-screen(v-if="splash")
+          .toolbar
+          .viewer 
+            p(v-cloack="", :class="{result: mode.result}") {{ current | toString }}
+          .history-viewer
+            p(v-cloack="") {{ history | toString }}
+          .button-panel
+            .numbers-pad
+              button.btn(v-for="button in buttons", v-cloack="", @click="clickHandler(button)") {{ button }}
+            .operations-pad
+              button.btn.operator(v-for="button in operators", v-cloack="", @click="clickHandler(button)") {{ button }}
+        .phone-controls
+          span.controls: i.material-icons keyboard_arrow_left
+          span.controls: i.material-icons panorama_fish_eye
+          span.controls: i.material-icons check_box_outline_blank
+      h4.mark LG
+    script(src="assets/js/vue.min.js")
+    script(src="app.js")

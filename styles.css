@@ -1,0 +1,313 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0; }
+
+[v-cloack] {
+  display: none; }
+
+.phone {
+  width: 290px;
+  height: 500px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #272727;
+  color: #555;
+  margin: 15px auto 15px auto;
+  border-radius: 14px;
+  position: relative;
+  border: 2px solid silver; }
+  .phone:after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 50px;
+    left: -3px;
+    top: 70px;
+    background: #222;
+    border-radius: 3px 0 0 3px; }
+  .phone:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 50px;
+    left: -3px;
+    top: 130px;
+    background: #222;
+    border-radius: 3px 0 0 3px; }
+  .phone .phone-screen {
+    width: 92%;
+    height: 80%;
+    margin-top: 15%;
+    background: #222;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden; }
+    .phone .phone-screen .status-bar {
+      width: 100%;
+      height: 5%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background: #29B6F6;
+      color: white; }
+      .phone .phone-screen .status-bar .material-icons {
+        font-size: 14px;
+        padding: 5px; }
+      .phone .phone-screen .status-bar span {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin: 0 2px; }
+      .phone .phone-screen .status-bar small {
+        font-size: 10px;
+        vertical-align: top; }
+  .phone .calculator-app {
+    background: white;
+    height: 95%; }
+  .phone .phone-controls {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    opacity: 0;
+    -webkit-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    transition: all ease .3s;
+    padding: 0 5%; }
+    .phone .phone-controls:hover {
+      opacity: 1; }
+  .phone .viewer,
+  .phone .history-viewer {
+    width: 100%;
+    height: 30%;
+    color: #222;
+    text-align: right;
+    padding: 15px;
+    font-size: 50px; }
+    .phone .viewer p.result,
+    .phone .history-viewer p.result {
+      -webkit-animation: result 2s;
+      animation: result 2s; }
+    .phone .viewer p.error,
+    .phone .history-viewer p.error {
+      -webkit-animation: error 2s;
+      animation: error 2s; }
+  .phone .history-viewer {
+    border-bottom: 1px solid blue;
+    height: 10%;
+    font-size: 16px; }
+  .phone .button-panel {
+    height: 60%;
+    background: #333;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .phone .numbers-pad {
+    width: 70%; }
+  .phone .operations-pad {
+    width: 25%;
+    height: 100%;
+    background: #555;
+    overflow: hidden;
+    border-right: 5px solid #29B6F6; }
+
+.btn-row {
+  height: 20%; }
+
+.btn {
+  width: 33%;
+  height: 50px;
+  background: #333;
+  color: #fff;
+  font-weight: bolder;
+  border: none;
+  font-size: 25px; }
+
+.controls,
+.btn {
+  cursor: pointer; }
+  .controls:hover,
+  .btn:hover {
+    background: rgba(0, 0, 0, 0.7); }
+  .controls:active, .controls:focus,
+  .btn:active,
+  .btn:focus {
+    outline: none; }
+  .controls:active,
+  .btn:active {
+    -webkit-animation: clicked 1s;
+    animation: clicked 1s; }
+  .controls.clicked,
+  .btn.clicked {
+    background: #29B6F6; }
+
+.operator {
+  font-size: 18px;
+  width: 100%;
+  height: 15%;
+  background: transparent; }
+
+.controls {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+  padding-top: 5px; }
+
+.splash-screen {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #29B6F6;
+  color: white;
+  position: absolute;
+  -webkit-animation: splash 1s;
+  animation: splash 1s; }
+
+@-webkit-keyframes clicked {
+  0% {
+    background: rgba(0, 0, 0, 0.7); }
+  30% {
+    background: #29B6F6; }
+  90% {
+    background: #29B6F6; }
+  100% {
+    background: rgba(0, 0, 0, 0.7); } }
+
+@keyframes clicked {
+  0% {
+    background: rgba(0, 0, 0, 0.7); }
+  30% {
+    background: #29B6F6; }
+  90% {
+    background: #29B6F6; }
+  100% {
+    background: rgba(0, 0, 0, 0.7); } }
+
+@-webkit-keyframes result {
+  0% {
+    font-size: 50px;
+    color: #222; }
+  50% {
+    font-size: 70px;
+    color: #29B6F6; }
+  100% {
+    font-size: 50px;
+    color: #222; } }
+
+@keyframes result {
+  0% {
+    font-size: 50px;
+    color: #222; }
+  50% {
+    font-size: 70px;
+    color: #29B6F6; }
+  100% {
+    font-size: 50px;
+    color: #222; } }
+
+@-webkit-keyframes error {
+  0% {
+    font-size: 50px;
+    color: #222; }
+  50% {
+    font-size: 70px;
+    color: #f20; }
+  100% {
+    font-size: 50px;
+    color: #222; } }
+
+@keyframes error {
+  0% {
+    font-size: 50px;
+    color: #222; }
+  50% {
+    font-size: 70px;
+    color: #f20; }
+  100% {
+    font-size: 50px;
+    color: #222; } }
+
+@-webkit-keyframes splash {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes splash {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@media (max-width: 768px) {
+  .phone {
+    width: 90%;
+    height: 600px;
+    background: black; } }

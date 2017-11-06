@@ -1,0 +1,188 @@
+$contrast-color: #29B6F6
+=makeFlex($direction, $w-align, $v-align)
+  display: flex
+  flex-direction: $direction
+  justify-content: $w-align
+  align-items: $v-align
+
+=size($w, $h)
+  width: $w
+  height: $h
+*
+  box-sizing: border-box
+  margin: auto
+  padding: 0
+[v-cloack]
+  display: none
+.phone
+  +size(290px,500px)
+  +makeFlex(column, center, center)
+  background: #272727
+  color: #555
+  margin: 15px auto 15px auto 
+  border-radius: 14px
+  position: relative
+  border: 2px solid silver 
+  &:after
+    content: ''
+    position: absolute
+    +size(3px, 50px)
+    left: -3px
+    top: 70px
+    background: #222
+    border-radius: 3px 0 0 3px
+  &:before
+    content: ''
+    position: absolute
+    +size(3px, 50px)
+    left: -3px
+    top: 130px
+    background: #222
+    border-radius: 3px 0 0 3px
+
+  .phone-screen
+    +size(92%, 80%)
+    margin-top: 15%
+    background: #222
+    border-radius: 2px
+    position: relative
+    overflow: hidden
+    .status-bar
+      +size(100%, 5%)
+      +makeFlex(row, flex-end, center)
+      background: $contrast-color
+      color: white
+
+      .material-icons
+        font-size: 14px
+        padding: 5px
+      
+      span
+        width: fit-content
+        margin: 0 2px
+      
+      small
+        font-size: 10px
+        vertical-align: top
+  
+  .calculator-app
+    background: white
+    height: 95%
+  
+  .phone-controls
+    position: absolute
+    +size(100%, 8%)
+    +makeFlex(row, space-around, center)
+    background: rgba(0,0,0,.8)
+    bottom: 0
+    opacity: 0
+    transition: all ease .3s
+    padding: 0 5%
+    &:hover
+      opacity: 1
+  .viewer,
+  .history-viewer
+    +size(100%, 30%)
+    color: #222
+    text-align: right
+    padding: 15px
+    font-size: 50px
+    p.result
+      animation: result 2s
+    p.error
+      animation: error 2s
+  .history-viewer
+    border-bottom: 1px solid blue
+    height: 10%
+    font-size: 16px
+  .button-panel
+    height: 60%
+    background: #333
+    display: flex
+  .numbers-pad
+    width: 70%
+  .operations-pad
+    +size(25%, 100%)
+    background: #555 
+    overflow: hidden
+    border-right: 5px solid $contrast-color
+        
+.btn-row    
+  height: 20%
+.btn
+  +size(33%, 50px)
+  background: #333
+  color: #fff
+  font-weight: bolder
+  border: none
+  font-size: 25px
+
+.controls,
+.btn
+  cursor: pointer
+  &:hover
+    background: rgba(0,0,0,.7)
+  &:active,
+  &:focus
+    outline: none 
+  &:active
+    animation: clicked 1s
+  &.clicked
+    background: $contrast-color
+.operator
+  font-size: 18px
+  +size(100%, 15%)
+  background: transparent
+
+.controls
+  +size(100%,100%)
+  text-align: center
+  color: white
+  vertical-align: middle
+  padding-top: 5px
+.splash-screen
+  +size(100%,100%)
+  +makeFlex(row, center, center)
+  background: $contrast-color
+  color: white
+  position: absolute
+  animation: splash 1s
+@keyframes clicked
+  0%
+    background:  rgba(0,0,0,.7)
+  30%
+    background: $contrast-color
+  90%
+    background: $contrast-color
+  100%
+    background:  rgba(0,0,0,.7)
+@keyframes result
+  0%
+    font-size: 50px
+    color: #222
+  50%  
+    font-size: 70px
+    color: $contrast-color
+  100%
+    font-size: 50px
+    color: #222
+@keyframes error
+  0%
+    font-size: 50px
+    color: #222
+  50%  
+    font-size: 70px
+    color: #f20
+  100%
+    font-size: 50px
+    color: #222
+@keyframes splash
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+@media (max-width: 768px)
+  .phone
+    +size(90%, 600px)
+    background: black
+    

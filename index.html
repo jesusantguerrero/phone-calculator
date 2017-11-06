@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Phone Calculator</title>
+    <link rel="stylesheet" href="assets/css/material-icons.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <div class="phone" id="phone-calculator">
+      <div class="phone-screen">
+        <div class="status-bar"><span><i class="material-icons">network_wifi</i></span><span><i class="material-icons">network_cell</i></span><span><i class="material-icons">battery_full</i></span><span><small>100%</small></span><span><b class="hour" v-cloack="">{{ time }}</b></span></div>
+        <div class="calculator-app">
+          <div class="splash-screen" v-if="splash"></div>
+          <div class="toolbar"></div>
+          <div class="viewer"> 
+            <p v-cloack="" :class="{result: mode.result}">{{ current | toString }}</p>
+          </div>
+          <div class="history-viewer">
+            <p v-cloack="">{{ history | toString }}</p>
+          </div>
+          <div class="button-panel">
+            <div class="numbers-pad">
+              <button class="btn" v-for="button in buttons" v-cloack="" @click="clickHandler(button)">{{ button }}</button>
+            </div>
+            <div class="operations-pad">
+              <button class="btn operator" v-for="button in operators" v-cloack="" @click="clickHandler(button)">{{ button }}</button>
+            </div>
+          </div>
+        </div>
+        <div class="phone-controls"><span class="controls"><i class="material-icons">keyboard_arrow_left</i></span><span class="controls"><i class="material-icons">panorama_fish_eye</i></span><span class="controls"><i class="material-icons">check_box_outline_blank</i></span></div>
+      </div>
+      <h4 class="mark">LG</h4>
+    </div>
+    <script src="assets/js/vue.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
