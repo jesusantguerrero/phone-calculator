@@ -4,6 +4,10 @@
   margin: auto;
   padding: 0; }
 
+body {
+  background: #42A7A1
+}
+
 [v-cloack] {
   display: none; }
 
@@ -32,7 +36,9 @@
   margin: 15px auto 15px auto;
   border-radius: 14px;
   position: relative;
-  border: 2px solid silver; }
+  border: 2px solid silver;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, .4);
+}
   .phone:after {
     content: '';
     position: absolute;
